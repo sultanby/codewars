@@ -5,16 +5,18 @@ Example: The binary representation of 1234 is 10011010010, so the function shoul
 */
 
 var countBits = function(n) {
-	list = [];
+  list = [];
   var rem = 0;
-  while (let i > 0){
-  	rem = n % 2;
-    console.log("rem" + rem);
+  while (n > 0){
+    rem = n % 2;
     list.push(rem);
-    console.log(list);
-    console.log("nbefore"+ n);
     n = Math.floor(n / 2);
-    console.log("nafter"+ n);
-    i++;
   }
+  var count = 0;
+  for(var i=0; i<list.length; i++){
+    if (list[i] == 1){
+      count += 1;
+    }
+  }
+  return count;
 };
